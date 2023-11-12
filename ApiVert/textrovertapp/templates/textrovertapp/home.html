@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-6j71wL56Dbx9Nl9Eclli7JtAOmf3sLp2aFTtP0tFap5B7I3eqD9lB2VG6u5sy07JxNEnM0kl7QT7pr8+I1JqVg==" crossorigin="anonymous" />
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: white;
+        }
+        .navbar-toggler-icon {
+            background-color: white;
+        }
+        section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .card {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">API Documentation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#overview">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#usage">Usage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#examples">Examples</a>
+                    </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Mirkomol" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> Contribute on GitHub
+                    </a>
+                </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+
+        <!-- Overview Section -->
+        <section id="overview">
+            <h2 class="text-primary">API Overview</h2>
+             <p>Welcome to the ApiVert API !</p>
+
+    <div class="mt-4">
+        <h3>About ApiVert  API</h3>
+        <p>
+            ApiVert API is designed to streamline the process of generating conversation templates for a variety of topics, making it a valuable resource for developers building chatbots, social media automation, and more.
+        </p>
+    </div>
+
+    <div class="mt-4">
+        <h3>Key Features:</h3>
+        <ol>
+            <li>
+                <strong>Topic-specific Templates:</strong>
+                <ul>
+                    <li>Easily access a rich collection of pre-defined templates for common daily life topics.</li>
+                    <li>Topics include emotions (anger, sadness, love), special occasions (birthday, wishes), and more.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Integration with Chatbots:</strong>
+                <ul>
+                    <li>Simplify the development of chatbots by integrating our API to provide diverse and realistic responses.</li>
+                    <li>Enhance user engagement and interaction with dynamic and topic-relevant conversations.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Social Media Automation:</strong>
+                <ul>
+                    <li>Automate social media posts with personalized and expressive content using our template library.</li>
+                    <li>Effortlessly create captivating messages for different scenarios without the need for extensive manual content creation.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Developer-Friendly:</strong>
+                <ul>
+                    <li>Built on Django Rest Framework for a robust and scalable solution.</li>
+                    <li>Straightforward API endpoints for easy integration into your applications and services.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="mt-4">
+        <h3>How to Get Started:</h3>
+        <ol>
+            <li>
+                <strong>Explore Topics:</strong>
+                <ul>
+                    <li>Review available topics and templates in our documentation.</li>
+                    <li>Choose topics that align with your application's needs.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Integrate with Your Application:</strong>
+                <ul>
+                    <li>Use simple API requests to fetch templates and integrate them seamlessly into your chatbot or automation workflows.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+        </section>
+
+
+        <!-- Usage Section -->
+        <section id="usage" class="mt-4">
+            <h2 class="text-primary">Usage</h2>
+            <p>To interact with the ApiVert API, follow these steps:</p>
+
+
+    <div class="mt-4">
+        <h3>1. Making Requests without API Key</h3>
+        <p>You can make requests to the ApiVert API without an API key when using it locally. Here's an example using cURL:</p>
+        <pre>
+            <code>
+                curl http://localhost:8000/all/
+            </code>
+        </pre>
+        <p>Replace `http://localhost:8000/api-endpoint/` with the actual endpoint of your ApiVert API hosted locally.</p>
+    </div>
+
+
+    <div class="mt-4">
+        <h3>2. Making Requests using Python</h3>
+        <p>If you prefer using Python, you can make requests using the `requests` library without an API key:</p>
+        <pre>
+            <code>
+                import requests
+
+                # Replace API_ENDPOINT with your actual API endpoint
+                api_endpoint = "http://localhost:8000/api-endpoint/"
+
+                response = requests.get(api_endpoint)
+
+                # Process the API response
+                print(response.json())
+
+            </code>
+        </pre>
+        <p>Replace `http://localhost:8000/api-endpoint/` with the actual endpoint of your ApiVert API and name of website hosted locally</p>
+    </div>
+
+        </section>
+
+
+        <section id="examples" class="mt-4">
+    <h2 class="text-primary">Examples</h2>
+    <p>You can get all JSON data by adding "/all" to the end of the actual website</p>
+
+    <!-- Example for retrieving all data -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Example Request - All Data</h5>
+            <p class="card-text">
+                To retrieve information about all categories, make a request:
+                <pre>
+                    <code>
+                        curl http://localhost:8000/all/
+                    </code>
+                </pre>
+            </p>
+        </div>
+    </div>
+
+    <!-- Examples for specific endpoints -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Example Requests - Specific Endpoints</h5>
+            <p class="card-text">
+                To retrieve information about specific categories, make requests:
+                <pre>
+                    <code>
+                        curl http://localhost:8000/birthday/
+                        curl http://localhost:8000/sad/
+                        curl http://localhost:8000/happy/
+                        curl http://localhost:8000/fear/
+                        curl http://localhost:8000/surprise/
+                        curl http://localhost:8000/anger/
+                        curl http://localhost:8000/help/
+                        curl http://localhost:8000/love/
+                    </code>
+                </pre>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Example Response</h5>
+                    <p class="card-text">
+                        The API will respond with a JSON object containing template details:
+                        <pre>
+                            <code>
+                                {
+                                    "id": 1,
+                                    "name": "birthday_1",
+                                    "data": "Happy Birthday",
+                                    "category": "Birthday"
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- Bootstrap JS and Popper.js (for Bootstrap components that require it) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
